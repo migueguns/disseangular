@@ -1,0 +1,34 @@
+<div class="wrap-section-page wrap-contain-associate">
+	<div class="col-md-12 col-contain">
+		<div class="wrap-associate col-6 center-block">
+			<h3 class="text-center">Asociar página de Facebook</h3>
+
+			<div class="wrap-list-fanpage">
+				<ul class="list-group" *ngIf="renderList">
+					
+
+				<li class="list-group-item text-center" *ngFor="let page of listFanpages; let i = index" >
+						<img  class="float-left rounded-circle" src="{{ page.url }}" alt="">
+						<span class="float-left">
+							{{ page.description }}
+						</span>
+						<div *ngIf="activeBtn">
+							<button *ngIf="checkStatus(page.pageId)"  class="btn btn-primary float-right" (click)="associatePage( page )">
+								Asociar
+							</button>
+							<h4 *ngIf="!checkStatus(page.pageId)" class="disabled btn btn-primary float-right">
+								Asociada
+							</h4>
+						</div>
+					</li>
+				</ul>
+				<div class="text-center col-12 center-block" *ngIf="dataSended" >
+					<div class="loader center-block"></div>
+				</div>
+				<a class="btn text-center col-12" target="_blank" href="https://www.facebook.com/pages/creation/">
+					Crear nueva página de facebook
+				</a>
+			</div>
+		</div>
+	</div>
+</div>

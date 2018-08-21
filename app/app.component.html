@@ -1,0 +1,21 @@
+  
+<div class="container-fluid">
+    <div class="wrap-app">
+
+        <div *ngIf="filterByPage('menu')" class="col-left main-menu col-lg-3 col-xl-2 d-lg-flex flex-lg-column align-items-end">
+            <app-menu (selectStory)="getStory($event)" class="app-menu"> </app-menu>
+            
+        </div> 
+        <div *ngIf=" filterByPage('main')" class="col-12 col-lg-9 col-xl-10 main-contain" [ngClass]="pageName | slice:1:pageName.length">      	
+            <app-header></app-header>
+            <router-outlet></router-outlet>
+        </div>
+        <div *ngIf="filterByPage('login')" class="col-12 col-md-12 col-xl-12 main-contain">
+            <app-login></app-login>
+        </div>
+
+
+    </div>
+</div>
+
+

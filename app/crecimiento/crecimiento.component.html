@@ -1,0 +1,132 @@
+<div class="row wrap-section-page wrap-contain-growth">
+	<div class="col-md-12">
+		<div class="col-md-12">
+        	<h3 class="title title-section">Crecimiento</h3>
+        </div>
+
+        <mat-accordion class="example-headers-align">
+		  <mat-expansion-panel [expanded]="step === 0" (opened)="setStep(0)" hideToggle="true">
+		    <mat-expansion-panel-header>
+		      <mat-panel-title>
+		        Paso 1
+		      </mat-panel-title>
+		      <mat-panel-description>
+		        Introducir SDK en el código de tu Ecommerce
+		      </mat-panel-description>
+		    </mat-expansion-panel-header>
+		    <p>Vé al código de tu Ecommerce y pega el script que se encuentra debajo:</p>
+		    <div class="code_script">
+		    		<pre class="prettyprint lang-js">
+	&lt;script&gt;
+		window.fbAsyncInit = function () {{ '{' }}
+			FB.init({{ '{' }}
+				appId: '159284631531779',
+				autoLogAppEvents: true,
+				xfbml: true,
+				version: 'v3.0'
+			{{ '}' }});
+			(function (d, s, id) {{ '{' }}
+				var js, fjs = d.getElementsByTagName(s)[0];
+				if (d.getElementById(id)) {{ '{' }} return; {{ '}' }}
+				js = d.createElement(s); js.id = id;
+				js.src = "https://connect.facebook.net/en_US/sdk.js";
+				fjs.parentNode.insertBefore(js, fjs);
+		{{ '}' }}(document, 'script', 'facebook-jssdk'));
+	&lt;/script&gt;</pre>
+		    	
+		    </div>
+		    <p>¿Cómo hago esto?</p>
+		    <div class="content_howto">
+			    <div class="row">
+			    	<div class="col-md-3">
+			    		<img src="../assets/images/profile_photo_icon.png" alt="">
+			    		<p>Paso 1</p>
+			    	</div>
+			    	<div class="col-md-3">
+			    		<img src="../assets/images/profile_photo_icon.png" alt="">
+			    		<p>Paso 2</p>
+			    	</div>
+			    	<div class="col-md-3">
+			    		<img src="../assets/images/profile_photo_icon.png" alt="">
+			    		<p>Paso 3</p>
+			    	</div>
+			    </div>
+			</div>
+			<small><mat-icon class="cancel_icon">cancel</mat-icon> Este paso es obligatorio. Sin hacer este primer paso no se puede hacer los siguientes.</small>
+		    <mat-action-row>
+		      <button mat-button color="primary" (click)="nextStep()">Siguiente</button>
+		    </mat-action-row>
+		  </mat-expansion-panel>
+
+		  <mat-expansion-panel [expanded]="step === 1" (opened)="setStep(1)" hideToggle="true">
+		    <mat-expansion-panel-header>
+		      <mat-panel-title>
+		        Paso 2
+		      </mat-panel-title>
+		      <mat-panel-description>
+		        Elegí dónde queres conseguir suscriptores
+		      </mat-panel-description>
+		    </mat-expansion-panel-header>
+		    <p>Elegí desde dónde queres conseguir suscriptores nuevos y pegá el código HTML en ese lugar específico</p>
+			<div class="row text-center">
+				<div class="col-md-12">
+					<div class="row">
+						<div class="col-md-3 pointer" (click)="openDialog('Página Web')">
+							<img src="../assets/images/profile_photo_icon.png" alt="">
+							<p>Página Web</p>
+						</div>
+						<div class="col-md-3 pointer" (click)="openDialog('Formulario Web')">
+							<img src="../assets/images/profile_photo_icon.png" alt="">
+							<p>Formulario Web</p>
+						</div>
+						<div class="col-md-3 pointer" (click)="openDialog('Footer')">
+							<img src="../assets/images/profile_photo_icon.png" alt="">
+							<p>Footer</p>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-3 pointer" (click)="openDialog('Blog')">
+							<img src="../assets/images/profile_photo_icon.png" alt="">
+							<p>Blog</p>
+						</div>
+						<div class="col-md-3 pointer" (click)="openDialog('Artículo')">
+							<img src="../assets/images/profile_photo_icon.png" alt="">
+							<p>Artículo</p>
+						</div>
+						<div class="col-md-3 pointer" (click)="openDialog('Carrito de Compras')">
+							<img src="../assets/images/profile_photo_icon.png" alt="">
+							<p>Carrito de Compras</p>
+						</div>
+					</div>
+				</div>
+				
+			</div>
+		    <mat-action-row>
+		      <button mat-button color="warn" (click)="prevStep()">Anterior</button>
+		      <button mat-button color="primary" (click)="nextStep()">Siguiente</button>
+		    </mat-action-row>
+		  </mat-expansion-panel>
+
+		  <mat-expansion-panel [expanded]="step === 2" (opened)="setStep(2)" hideToggle="true">
+		    <mat-expansion-panel-header>
+		      <mat-panel-title>
+		        Paso 3
+		      </mat-panel-title>
+		      <mat-panel-description>
+		        Mira el mensaje que van a recibir tus suscriptores
+		      </mat-panel-description>
+		    </mat-expansion-panel-header>
+		    <div class="mensaje">
+		    	<h3>Hola, ¿Querés subscribirte para recibir las novedades?</h3>
+		    	<h4>Opciones (SI) - (NO)</h4>
+		    </div>
+		    <p>¿Querés cambiar el texto? Mandanos un mail a soporte@disse.io</p>
+		    <mat-action-row>
+		      <button mat-button color="warn" (click)="prevStep()">Anterior</button>
+		    </mat-action-row>
+		  </mat-expansion-panel>
+
+		</mat-accordion>
+
+	</div>
+</div>

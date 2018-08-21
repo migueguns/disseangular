@@ -1,0 +1,48 @@
+
+@media screen and (max-width: 990px)
+	.container-fluid
+		.wrap-app
+			display: block
+			.col-left
+				background: linear-gradient(#3be49d, #5ca2e5)
+
+@media screen and (min-width: 992px)
+	.container-fluid
+		.wrap-app
+			display: inline-flex
+	.container-fluid, .col-left, .wrap-app
+		min-height: 100%
+		height: 100%
+		overflow-y: auto
+
+
+
+
+body 
+	.container-fluid
+		padding: 0px
+		.wrap-app
+			width: 100%
+			.col-left
+				padding: 0px
+				background-color: white
+				box-shadow: 2px 0 20px #999
+				.app-menu
+					padding: 0px
+					width: 100%
+				img
+					width: 100%
+			.associate
+				flex: 100%
+				width: 100%
+				max-width: 100%
+			.main-contain
+				height: 100%
+				min-height: 100%
+				overflow-y: auto
+				app-header
+					position: absolute
+					right: 30px
+				
+
+

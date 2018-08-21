@@ -1,0 +1,103 @@
+<div class="wrap-left-container">
+
+	<div class="logo">
+		<a href="/"></a>	
+	</div>
+
+
+	<div class="wrap-avatar text-center">
+		<img class="pic center-block" src="{{ picturePageSelected }}"/>
+	</div>
+
+	<div class="text-center wrap-select">
+		<div class="col">
+			<div   ngbDropdown class="d-inline-block center-block">
+				<button class="btn" id="dropdownBasic1" ngbDropdownToggle>{{namePageSelected}}</button>
+				<div  ngbDropdownMenu aria-labelledby="dropdownBasic1">
+
+					<button  *ngFor="let pages of listFanpages; let i = index" class="dropdown-item"  (click)="loadPage(pages)">
+						<img src="{{ pages.url }}" class="rounded-circle picture-profile" alt="">
+						{{ pages.description }}
+					</button>
+					<hr>
+					<a class="btn text-center" (click)="closeSession()">
+						<fa [name]="'sign-out'" ></fa>
+						Cerrar sessión
+					</a>
+					<a class="btn text-center" href="/associate" >
+						<fa [name]="'plus'"></fa>
+						Agregar Página
+					</a>
+
+				</div>	
+			</div>
+		</div>
+	</div>
+
+	<nav class="navbar navbar-expand-lg navbar-light bg-light ">
+
+		<div class="dropdown navbar-collapse" id="navbarSupportedContent">
+			<ul class="list-menu text-right justify-content-end flex-column">
+				<li class="link-version-web">
+					<a href="">Inicio<i><fa [name]="'home'"></fa></i></a>
+				</li>
+				<li class="link-version-web">
+					<a href="">Campañas<i><fa [name]="'comment'"></fa></i></a>
+				</li>
+				<li class="link-version-web">
+					<a href="/crecimiento">Crecimiento<i><fa [name]="'line-chart'"></fa></i></a>
+				</li>
+				<li class="link-version-web">
+					<a href="/suscriptores">Suscripción<i><fa [name]="'user'"></fa></i></a>
+				</li>
+				<li class="link-version-web">
+					<a href="">Configuración<i><fa [name]="'cogs'"></fa></i></a>
+				</li>
+
+				<li class="nav-item dropdown">
+					<div ngbDropdown class="d-inline-block">
+						<button class="btn dropdown navbar-toggler" id="dropdownMenu1" ngbDropdownToggle> 
+							<fa [name]="'bars'"></fa>
+						</button>
+						
+						<div class="dropdown-menu" aria-labelledby="dropdownMenu1">
+							<ul class="text-right">
+								<li>
+									<a href="">Home<i><fa [name]="'home'"></fa></i></a>
+								</li>
+								<li>
+									<a href="">Campañas<i><fa [name]="'comment'"></fa></i></a>
+								</li>
+								<li>
+									<a href="">Crecimiento<i><fa [name]="'line-chart'"></fa></i></a>
+								</li>
+								<li>
+									<a href="/suscriptores">Suscripción<i><fa [name]="'user'"></fa></i></a>
+								</li>
+								<li>
+									<a href="">Configuración<i><fa [name]="'cogs'"></fa></i></a>
+								</li>
+								<li>
+									<a href="">Ayuda <i><fa [name]="'user'"></fa></i></a>
+								</li>
+								<li>
+									<a href="">Recursos<i><fa [name]="'cogs'"></fa></i></a>
+								</li>
+								<li>					
+									<a href="">Cerrar sessión</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</nav>
+
+	<ul class="list-footer">
+		<li><a class="help" href=""> Ayuda</a></li>
+		<li><a class="resource" href="">Recursos</a></li>
+	</ul>
+
+</div>
+
