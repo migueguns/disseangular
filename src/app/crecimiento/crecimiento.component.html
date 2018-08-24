@@ -11,7 +11,7 @@
 		        Paso 1
 		      </mat-panel-title>
 		      <mat-panel-description>
-		        Introducir SDK en el código de tu Ecommerce
+		        Introducir el SDK en el código fuente de tu ecommerce
 		      </mat-panel-description>
 		    </mat-expansion-panel-header>
 		    <p>Vé al código de tu Ecommerce y pega el script que se encuentra debajo:</p>
@@ -38,17 +38,12 @@
 		    <p>¿Cómo hago esto?</p>
 		    <div class="content_howto">
 			    <div class="row">
-			    	<div class="col-md-3">
-			    		<img src="../assets/images/profile_photo_icon.png" alt="">
-			    		<p>Paso 1</p>
+			    	<div class="col-md-5">
+			    		<p><mat-icon color="primary">check_circle_outline</mat-icon> Vé al código fuente de tu Ecommerce.<br/><small>* Si no sabes habla con el administrador de tu web o la agencia que maneja esto</small></p>
+			    		
 			    	</div>
-			    	<div class="col-md-3">
-			    		<img src="../assets/images/profile_photo_icon.png" alt="">
-			    		<p>Paso 2</p>
-			    	</div>
-			    	<div class="col-md-3">
-			    		<img src="../assets/images/profile_photo_icon.png" alt="">
-			    		<p>Paso 3</p>
+			    	<div class="col-md-5">
+			    		<p><mat-icon color="primary">check_circle_outline</mat-icon> Pega el Script(ver arriba) luego del tag <code>&lt;body&gt;</code> de apertura en cada página que quieras incluirlo.</p>
 			    	</div>
 			    </div>
 			</div>
@@ -64,42 +59,31 @@
 		        Paso 2
 		      </mat-panel-title>
 		      <mat-panel-description>
-		        Elegí dónde queres conseguir suscriptores
+		        Elige qué herramienta quieres utilizar para captar nuevos suscriptores
 		      </mat-panel-description>
 		    </mat-expansion-panel-header>
 		    <p>Elegí desde dónde queres conseguir suscriptores nuevos y pegá el código HTML en ese lugar específico</p>
 			<div class="row text-center">
 				<div class="col-md-12">
 					<div class="row">
-						<div class="col-md-3 pointer" (click)="openDialog('Página Web')">
-							<img src="../assets/images/profile_photo_icon.png" alt="">
-							<p>Página Web</p>
+						<div class="col-md-3 pointer" (click)="openDialog('Checkbox')">
+							<img src="../assets/images/checkbox.png" alt="">
+							<p>Checkbox (Para formularios)</p>
 						</div>
-						<div class="col-md-3 pointer" (click)="openDialog('Formulario Web')">
-							<img src="../assets/images/profile_photo_icon.png" alt="">
-							<p>Formulario Web</p>
+						<div class="col-md-3 pointer" (click)="openDialog('Send To Messenger')">
+							<img src="../assets/images/sendtomessenger.png" alt="">
+							<p>Send To Messenger</p>
 						</div>
-						<div class="col-md-3 pointer" (click)="openDialog('Footer')">
-							<img src="../assets/images/profile_photo_icon.png" alt="">
-							<p>Footer</p>
+						<div class="col-md-3 pointer" (click)="openDialog('MessageUs')">
+							<img src="../assets/images/messageus.png" alt="">
+							<p>MessageUs</p>
 						</div>
-					</div>
-					<div class="row">
-						<div class="col-md-3 pointer" (click)="openDialog('Blog')">
-							<img src="../assets/images/profile_photo_icon.png" alt="">
-							<p>Blog</p>
-						</div>
-						<div class="col-md-3 pointer" (click)="openDialog('Artículo')">
-							<img src="../assets/images/profile_photo_icon.png" alt="">
-							<p>Artículo</p>
-						</div>
-						<div class="col-md-3 pointer" (click)="openDialog('Carrito de Compras')">
-							<img src="../assets/images/profile_photo_icon.png" alt="">
-							<p>Carrito de Compras</p>
+						<div class="col-md-3 pointer" (click)="openDialog('Link m.me')">
+							<img src="../assets/images/linkmme.png" alt="">
+							<p>Link m.me</p>
 						</div>
 					</div>
 				</div>
-				
 			</div>
 		    <mat-action-row>
 		      <button mat-button color="warn" (click)="prevStep()">Anterior</button>
