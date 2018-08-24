@@ -1,30 +1,101 @@
 <mat-dialog-content>
-	<p>Pega el código HTML e introdúcelo en la sección en {{data.seccion}}</p>
-    <div class="code_script">
-    	<blockquote><pre><code>CODE HERE</code></pre></blockquote>
-    </div>
-    <p>¿Cómo hago esto?</p>
-    <div class="content_howto">
-	    <div class="row">
-	    	<div class="col-md-3">
-	    		<img src="../assets/images/profile_photo_icon.png" alt="">
-	    		<p>Paso 1</p>
-	    	</div>
-	    	<div class="col-md-3">
-	    		<img src="../assets/images/profile_photo_icon.png" alt="">
-	    		<p>Paso 2</p>
-	    	</div>
-	    	<div class="col-md-3">
-	    		<img src="../assets/images/profile_photo_icon.png" alt="">
-	    		<p>Paso 3</p>
-	    	</div>
-	    	<div class="col-md-3">
-	    		<img src="../assets/images/profile_photo_icon.png" alt="">
-	    		<p>Paso 4</p>
-	    	</div>
+	<h3 class="text-center">{{data.titulo}}</h3>
+	<div *ngIf="data.seccion == 'checkbox'">
+		<p><strong>¿Cómo hago esto?</strong></p>
+	    <div class="content_howto">
+		    <div class="row">
+		    	<div class="col-md-4">
+		    		<p><mat-icon color="primary">check_circle_outline</mat-icon> Agregar un div en donde se quiera mostrar el checkbox. Ejemplo: <code>&lt;div id="checkbox"&gt;&lt;/div&gt;</code></p>
+		    	</div>
+		    	<div class="col-md-4">
+		    		<p><mat-icon color="primary">check_circle_outline</mat-icon> Pega el Script (ver abajo) luego del tag <code>&lt;body&gt;</code> de apertura en cada página que quieras incluirlo.</p>
+		    	</div>
+		    	<div class="col-md-4">
+		    		<p><mat-icon color="primary">check_circle_outline</mat-icon> Agregar al “Submit” del formulario la función confirmOptin(). Por ejemplo: <code>&lt;input type="button" onclick="confirmOptIn()" value="Confirm Opt-in" /&gt;</code></p>
+		    	</div>
+		    </div>
+		</div>
+		<div class="code_script">
+    		<pre class="prettyprint">&lt;script&gt;
+var randomNum = Math.random().toString(36).substring(2, 15) 
++ Math.random().toString(36).substring(2, 15);
+	document.getElementById('checkbox').innerHTML = '&lt;div class="fb-messenger-checkbox" origin="https://dimebot.azurewebsites.net/"
+            page_id="543398122686213"
+            messenger_app_id="159284631531779"
+            user_ref="${{ '{' }}randomNum{{ '}' }}"
+            prechecked="true"
+            allow_login="true"
+            size="large"
+            skin="light"
+            center_align="true"&gt;
+        &lt;/div&gt;';
+function confirmOptIn() {{ '{' }}
+	FB.AppEvents.logEvent('MessengerCheckboxUserConfirmation', null, {{ '{' }}
+        'app_id': '159284631531779',
+        'page_id': '543398122686213',
+        'ref': 'checkbox-disse',
+        'user_ref': randomNum
+    {{ '}' }});
+{{ '}' }}
+&lt;/script&gt;</pre>
+	    </div>
+	</div>
+
+    <div *ngIf="data.seccion == 'sendto'">
+	    <p><strong>¿Cómo hago esto?</strong></p>
+	    <div class="content_howto">
+		    <div class="row">
+		    	<div class="col-md-12">
+		    		<p><mat-icon color="primary">check_circle_outline</mat-icon> Agregar el siguiente div en donde quieras colocar el botón:</p>
+		    	</div>
+		    </div>
+		</div>
+		<div class="code_script">
+    		<pre class="prettyprint lang-js">
+&lt;div class="fb-send-to-messenger"
+	messenger_app_id="159284631531779"
+	page_id="543398122686213"
+	data-ref="sendToMessenger"
+	color="blue"
+	size="large"&gt;
+&lt;/div&gt;</pre>
+	    </div>
+	</div>
+
+	<div *ngIf="data.seccion == 'messageus'">
+	    <p><strong>¿Cómo hago esto?</strong></p>
+	    <div class="content_howto">
+		    <div class="row">
+		    	<div class="col-md-12">
+		    		<p><mat-icon color="primary">check_circle_outline</mat-icon> Agregar el siguiente div en donde quieras colocar el botón:</p>
+		    	</div>
+		    </div>
+		</div>
+		<div class="code_script">
+    		<pre class="prettyprint lang-js">
+&lt;div class="fb-messengermessageus"
+         messenger_app_id="159284631531779"
+         page_id="543398122686213"
+         color="blue"
+         size="large"&gt;
+&lt;/div&gt;</pre>
+	    </div>
+	</div>
+
+	<div *ngIf="data.seccion == 'link'">
+	    <p><strong>¿Cómo hago esto?</strong></p>
+	    <div class="content_howto">
+		    <div class="row">
+		    	<div class="col-md-12">
+		    		<p><mat-icon color="primary">check_circle_outline</mat-icon> m.me es un servicio de Facebook que permite acortar las URL y redirige a los usuarios a una persona, una página o un bot en Messenger. Puedes utilizar las URL acortadas en tu sitio web, en boletines de noticias enviados por correo electrónico, etcétera. Coloca este link donde prefieras:</p>
+		    	</div>
+		    </div>
+		</div>
+		<div class="code_script">
+    		<pre class="prettyprint lang-js">http://m.me/543398122686213?ref=disse-link</pre>
 	    </div>
 	</div>
 </mat-dialog-content>
 <mat-dialog-actions align="end">
-  <button mat-button mat-dialog-close tabindex="-1">Listo</button>
+  <button mat-button mat-dialog-close tabindex="-1" color="primary">Listo</button>
 </mat-dialog-actions>

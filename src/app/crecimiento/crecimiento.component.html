@@ -35,7 +35,7 @@
 	&lt;/script&gt;</pre>
 		    	
 		    </div>
-		    <p>¿Cómo hago esto?</p>
+		    <p><strong>¿Cómo hago esto?</strong></p>
 		    <div class="content_howto">
 			    <div class="row">
 			    	<div class="col-md-5">
@@ -66,21 +66,21 @@
 			<div class="row text-center">
 				<div class="col-md-12">
 					<div class="row">
-						<div class="col-md-3 pointer" (click)="openDialog('Checkbox')">
+						<div class="col-md-3 pointer" (click)="openDialog('Checkbox (Para formularios)', 'checkbox')">
 							<img src="../assets/images/checkbox.png" width="100%" alt="">
-							<p>Checkbox (Para formularios)</p>
+							<p><strong>Checkbox (Para formularios)</strong></p>
 						</div>
-						<div class="col-md-2 pointer" (click)="openDialog('Send To Messenger')">
+						<div class="col-md-2 pointer" (click)="openDialog('Send To Messenger (Botón)', 'sendto')">
 							<img src="../assets/images/sendtomessenger.png" width="100%" alt="">
-							<p>Send To Messenger (Botón)</p>
+							<p><strong>Send To Messenger (Botón)</strong></p>
 						</div>
-						<div class="col-md-2 pointer" (click)="openDialog('MessageUs')">
+						<div class="col-md-2 pointer" (click)="openDialog('MessageUs (Botón)', 'messageus')">
 							<img src="../assets/images/messageus.png" width="100%" alt="">
-							<p>MessageUs (Botón)</p>
+							<p><strong>MessageUs (Botón)</strong></p>
 						</div>
-						<div class="col-md-3 pointer" (click)="openDialog('Link m.me')">
+						<div class="col-md-3 pointer" (click)="openDialog('Link m.me (Enlace)', 'link')">
 							<img src="../assets/images/linkmme.png" width="100%" alt="">
-							<p>Link m.me (Enlace)</p>
+							<p><strong>Link m.me (Enlace)</strong></p>
 						</div>
 					</div>
 				</div>
@@ -97,12 +97,21 @@
 		        Paso 3
 		      </mat-panel-title>
 		      <mat-panel-description>
-		        Mira el mensaje que van a recibir tus suscriptores
+		        Primer mensaje que van a recibir tus potenciales suscriptores
 		      </mat-panel-description>
 		    </mat-expansion-panel-header>
-		    <div class="mensaje">
-		    	<h3>Hola, ¿Querés subscribirte para recibir las novedades?</h3>
-		    	<h4>Opciones (SI) - (NO)</h4>
+		    <div class="row">
+		    	<div class="col-md-12">
+		    		<div class="mensaje">
+				    	<p>Hola, ¿Cómo estás? ¿Querés recibir novedades y promociones de nuestros  productos? ¡Tenemos las mejores promociones para vos!</p>
+						<button mat-button color="primary">Si, quiero recibir promociones</button>
+						<button mat-button color="primary">No, por el momento no.</button>
+					</div>
+					<p><strong>En caso de aceptar esa persona ya será un suscriptor y recibirá el siguiente mensaje:</strong></p>
+					<div class="mensaje">
+						<p>Gracias, a partir de ahora vas a recibir nuestras promociones a través de Facebook Messenger. En Empresa estamos muy contentos de tenerte!</p>
+					</div>
+				</div>
 		    </div>
 		    <p>¿Querés cambiar el texto? Mandanos un mail a soporte@disse.io</p>
 		    <mat-action-row>

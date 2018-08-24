@@ -24,11 +24,13 @@ export class CrecimientoComponent implements OnInit {
 
 	constructor(private dialog: MatDialog) { }
 
-	openDialog(seccion) {
+	openDialog(titulo, seccion) {
 		var selectedSeccion = seccion;
+		var selectedTitulo = titulo;
 		const dialogRef = this.dialog.open(CrecimientoDialog,{
 			data : {
-				seccion : selectedSeccion
+				seccion : selectedSeccion,
+				titulo : selectedTitulo
 			}
 		});
 	}
@@ -46,6 +48,8 @@ export class CrecimientoComponent implements OnInit {
 export class CrecimientoDialog {
 
 	constructor(
-		public dialogRef: MatDialogRef<CrecimientoDialog>, @Inject(MAT_DIALOG_DATA) public data: any) { }
+		public dialogRef: MatDialogRef<CrecimientoDialog>, @Inject(MAT_DIALOG_DATA) public data: any) { 
+		console.log('data', this.data);
+	}
 
 }
