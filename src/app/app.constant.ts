@@ -7,6 +7,7 @@ export class AppConstant {
   getConstantFace() {
     let url = "https://dimebot.azurewebsites.net/"
 		return {
+			url: url,
 			appFaceId: '159284631531779',
 			listSubscribers : url + 'api/subscriptors'
 		}
@@ -19,9 +20,9 @@ export class AppConstant {
 	}
 
   getConstantApp() {
-
     let url = "https://dimebot.azurewebsites.net/"
     return {
+      url: url,
       logoWinged: './assets/images/logo-winged-app.png',
       apiPathLogin: url + 'api/login',
       apiPathPage: url + 'api/page'

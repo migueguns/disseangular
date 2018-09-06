@@ -13,8 +13,6 @@ import { AppComponent } from '../../app.component';
 })
 @Injectable()
 export class LoginComponent {
-	
-
 	fbData : any;
 	fbUserPages:  any = {};
 	pathLogo:string;
