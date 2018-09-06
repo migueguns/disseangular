@@ -8,7 +8,7 @@ export class AppConstant {
     let url = "https://dimebot.azurewebsites.net/"
 		return {
 			url: url,
-			appFaceId: '159284631531779',
+			appFaceId: '213251205974324',
 			listSubscribers : url + 'api/subscriptors'
 		}
 	}

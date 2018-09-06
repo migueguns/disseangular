@@ -20,7 +20,7 @@
 var randomNum = Math.random().toString(36).substring(2, 15) 
 + Math.random().toString(36).substring(2, 15);
 	document.getElementById('checkbox').innerHTML = '&lt;div class="fb-messenger-checkbox" origin="{{url}}"
-            page_id="{{pageSelected}}"
+            page_id="{{pageSelected.pageId}}"
             messenger_app_id="{{appFaceId}}"
             user_ref="${{ '{' }}randomNum{{ '}' }}"
             prechecked="true"
@@ -32,7 +32,7 @@ var randomNum = Math.random().toString(36).substring(2, 15)
 function confirmOptIn() {{ '{' }}
 	FB.AppEvents.logEvent('MessengerCheckboxUserConfirmation', null, {{ '{' }}
         'app_id': '{{appFaceId}}',
-        'page_id': '{{pageSelected}}',
+        'page_id': '{{pageSelected.pageId}}',
         'ref': 'checkbox-disse',
         'user_ref': randomNum
     {{ '}' }});
@@ -54,7 +54,7 @@ function confirmOptIn() {{ '{' }}
     		<pre class="prettyprint lang-js">
 &lt;div class="fb-send-to-messenger"
 	messenger_app_id="{{appFaceId}}"
-	page_id="{{pageSelected}}"
+	page_id="{{pageSelected.pageId}}"
 	data-ref="sendToMessenger"
 	color="blue"
 	size="large"&gt;
@@ -75,7 +75,7 @@ function confirmOptIn() {{ '{' }}
     		<pre class="prettyprint lang-js">
 &lt;div class="fb-messengermessageus"
          messenger_app_id="{{appFaceId}}"
-         page_id="{{pageSelected}}"
+         page_id="{{pageSelected.pageId}}"
          color="blue"
          size="large"&gt;
 &lt;/div&gt;</pre>
@@ -92,7 +92,7 @@ function confirmOptIn() {{ '{' }}
 		    </div>
 		</div>
 		<div class="code_script">
-    		<pre class="prettyprint lang-js">http://m.me/{{pageSelected}}?ref=disse-link</pre>
+    		<pre class="prettyprint lang-js">http://m.me/{{pageSelected.pageId}}?ref=disse-link</pre>
 	    </div>
 	</div>
 </mat-dialog-content>

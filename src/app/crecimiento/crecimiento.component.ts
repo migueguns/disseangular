@@ -65,8 +65,7 @@ export class CrecimientoDialog {
 		private associatePage: AssociatepageService) { 
 		let consApp = this.appConstant.getConstantFace();
 		this.appFaceId = consApp.appFaceId;
-		this.pageSelected = associatePage.getPageSelected();
-		console.log(this.pageSelected);
+		this.pageSelected = associatePage.getPagesAssocietedStorage();
 		this.url = consApp.url;
 	}
 
