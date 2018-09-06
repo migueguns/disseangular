@@ -19,9 +19,9 @@
     		<pre class="prettyprint">&lt;script&gt;
 var randomNum = Math.random().toString(36).substring(2, 15) 
 + Math.random().toString(36).substring(2, 15);
-	document.getElementById('checkbox').innerHTML = '&lt;div class="fb-messenger-checkbox" origin="https://dimebot.azurewebsites.net/"
-            page_id="543398122686213"
-            messenger_app_id="159284631531779"
+	document.getElementById('checkbox').innerHTML = '&lt;div class="fb-messenger-checkbox" origin="{{url}}"
+            page_id="{{pageSelected}}"
+            messenger_app_id="{{appFaceId}}"
             user_ref="${{ '{' }}randomNum{{ '}' }}"
             prechecked="true"
             allow_login="true"
@@ -31,8 +31,8 @@ var randomNum = Math.random().toString(36).substring(2, 15)
         &lt;/div&gt;';
 function confirmOptIn() {{ '{' }}
 	FB.AppEvents.logEvent('MessengerCheckboxUserConfirmation', null, {{ '{' }}
-        'app_id': '159284631531779',
-        'page_id': '543398122686213',
+        'app_id': '{{appFaceId}}',
+        'page_id': '{{pageSelected}}',
         'ref': 'checkbox-disse',
         'user_ref': randomNum
     {{ '}' }});
@@ -53,8 +53,8 @@ function confirmOptIn() {{ '{' }}
 		<div class="code_script">
     		<pre class="prettyprint lang-js">
 &lt;div class="fb-send-to-messenger"
-	messenger_app_id="159284631531779"
-	page_id="543398122686213"
+	messenger_app_id="{{appFaceId}}"
+	page_id="{{pageSelected}}"
 	data-ref="sendToMessenger"
 	color="blue"
 	size="large"&gt;
@@ -74,8 +74,8 @@ function confirmOptIn() {{ '{' }}
 		<div class="code_script">
     		<pre class="prettyprint lang-js">
 &lt;div class="fb-messengermessageus"
-         messenger_app_id="159284631531779"
-         page_id="543398122686213"
+         messenger_app_id="{{appFaceId}}"
+         page_id="{{pageSelected}}"
          color="blue"
          size="large"&gt;
 &lt;/div&gt;</pre>
@@ -92,7 +92,7 @@ function confirmOptIn() {{ '{' }}
 		    </div>
 		</div>
 		<div class="code_script">
-    		<pre class="prettyprint lang-js">http://m.me/543398122686213?ref=disse-link</pre>
+    		<pre class="prettyprint lang-js">http://m.me/{{pageSelected}}?ref=disse-link</pre>
 	    </div>
 	</div>
 </mat-dialog-content>
