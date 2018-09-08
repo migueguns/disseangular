@@ -49,7 +49,7 @@
 			</div>
 			<small><mat-icon class="cancel_icon">cancel</mat-icon> Este paso es obligatorio. Sin hacer este primer paso no se puede hacer los siguientes.</small>
 		    <mat-action-row>
-		      <button mat-button color="primary" (click)="nextStep()">Siguiente</button>
+		      <button mat-raised-button color="primary" (click)="nextStep()">Siguiente</button>
 		    </mat-action-row>
 		  </mat-expansion-panel>
 
@@ -63,31 +63,27 @@
 		      </mat-panel-description>
 		    </mat-expansion-panel-header>
 		    <p>Elegí desde dónde queres conseguir suscriptores nuevos y pegá el código HTML en ese lugar específico</p>
-			<div class="row text-center">
-				<div class="col-md-12">
-					<div class="row">
-						<div class="col-md-3 pointer" (click)="openDialog('Checkbox (Para formularios)', 'checkbox')">
-							<img src="../assets/images/checkbox.png" width="100%" alt="">
-							<p><strong>Checkbox (Para formularios)</strong></p>
-						</div>
-						<div class="col-md-2 pointer" (click)="openDialog('Send To Messenger (Botón)', 'sendto')">
-							<img src="../assets/images/sendtomessenger.png" width="100%" alt="">
-							<p><strong>Send To Messenger (Botón)</strong></p>
-						</div>
-						<div class="col-md-2 pointer" (click)="openDialog('MessageUs (Botón)', 'messageus')">
-							<img src="../assets/images/messageus.png" width="100%" alt="">
-							<p><strong>MessageUs (Botón)</strong></p>
-						</div>
-						<div class="col-md-3 pointer" (click)="openDialog('Link m.me (Enlace)', 'link')">
-							<img src="../assets/images/linkmme.png" width="100%" alt="">
-							<p><strong>Link m.me (Enlace)</strong></p>
-						</div>
-					</div>
+			<div class="row text-center opciones_paso2">
+				<div class="col-md-2 pointer" (click)="openDialog('Checkbox (Para formularios)', 'checkbox')">
+					<img class="first_option" src="../assets/images/checkbox.png" width="100%" alt="">
+					<p><strong>Checkbox (Para formularios)</strong></p>
+				</div>
+				<div class="col-md-2 pointer" (click)="openDialog('Send To Messenger (Botón)', 'sendto')">
+					<img src="../assets/images/sendtomessenger.png" width="100%" alt="">
+					<p><strong>Send To Messenger (Botón)</strong></p>
+				</div>
+				<div class="col-md-2 pointer" (click)="openDialog('MessageUs (Botón)', 'messageus')">
+					<img src="../assets/images/messageus.png" width="100%" alt="">
+					<p><strong>MessageUs (Botón)</strong></p>
+				</div>
+				<div class="col-md-3 pointer" (click)="openDialog('Link m.me (Enlace)', 'link')">
+					<img src="../assets/images/linkmme.png" width="100%" alt="">
+					<p><strong>Link m.me (Enlace)</strong></p>
 				</div>
 			</div>
 		    <mat-action-row>
-		      <button mat-button color="warn" (click)="prevStep()">Anterior</button>
-		      <button mat-button color="primary" (click)="nextStep()">Siguiente</button>
+		      <button mat-raised-button color="warn" (click)="prevStep()" class="boton_anterior">Anterior</button>
+		      <button mat-raised-button color="primary" (click)="nextStep()">Siguiente</button>
 		    </mat-action-row>
 		  </mat-expansion-panel>
 
@@ -115,7 +111,7 @@
 		    </div>
 		    <p>¿Querés cambiar el texto? Mandanos un mail a soporte@disse.io</p>
 		    <mat-action-row>
-		      <button mat-button color="warn" (click)="prevStep()">Anterior</button>
+		      <button mat-raised-button color="warn" (click)="prevStep()">Anterior</button>
 		    </mat-action-row>
 		  </mat-expansion-panel>
 

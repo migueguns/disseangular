@@ -1,5 +1,5 @@
 import { Component, OnInit, Inject } from '@angular/core';
-import {AppModule} from '../app.module';
+import { AppModule } from '../app.module';
 import { MatDialogRef, MatDialog, MAT_DIALOG_DATA } from '@angular/material';
 import { AppConstant } from '../app.constant';
 import { AssociatepageService } from '../associatepage/associatepage.service';
@@ -49,8 +49,9 @@ export class CrecimientoComponent implements OnInit {
 
 @Component({
 	selector: 'crecimiento-dialog',
-	templateUrl: 'crecimiento-dialog.html',
-	styleUrls: ['crecimiento-dialog.sass']
+	templateUrl: 'crecimiento-dialog.component.html',
+	styleUrls: ['crecimiento-dialog.component.sass'],
+	providers: [AppConstant, AssociatepageService]
 })
 
 export class CrecimientoDialog {
